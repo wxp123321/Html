@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Red.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    
+    function test(e)
+    {
+       var a = document.getElementById("div1");
+       if(e.value == "红色")
+       {
+          a.style.backgroundColor="red";
+       
+       }
+       else if(e.value == "黑色")
+       {
+         a.style.backgroundColor="black";
+       }
+    }
+    </script>
+  </head>
+  
+  <body>
+    <div id="div1" style="width:400px; height: 200px; background-color: red"></div>
+    <input type="button" value="红色" onclick="test(this)"/>
+     <input type="button" value="黑色" onclick="test(this)"/>
+  </body>
+</html>

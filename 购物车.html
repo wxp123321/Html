@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>购物车.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+    
+      function test(obj)
+      {
+        var price = 0;
+        var a = document.getElementsByName("fruit");
+        for(var i = 0;i < a.length;i++)
+        {
+          if(a[i].checked)
+          {
+            price+=parseFloat(a[i].value);
+          }
+        }
+        span1.innerText=price+"元";
+      }
+    </script>
+  </head>
+  
+  <body>
+     <input type="checkbox" name="fruit" value="10" onclick="test(this)"/>苹果 10<br>
+     <input type="checkbox" name="fruit" value="20" onclick="test(this)"/>香蕉 20<br>
+     <input type="checkbox" name="fruit" value="30" onclick="test(this)"/>甜瓜 30<br>
+     <input type="checkbox" name="fruit" value="40" onclick="test(this)"/>西瓜 40<br>
+         总价格为 <span id="span1">0元</span>
+  </body>
+</html>

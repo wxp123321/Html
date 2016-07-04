@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>注册新用户.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="./my3.css">
+    <script type="text/javascript">
+      function test()
+        {
+          span1.innerText="";
+        
+          span2.innerText="";
+    
+          span3.innerText="";
+          if(document.forms[0].username.value.length < 4||document.forms[0].username.value.length > 6)
+          {
+            span1.innerText="请输入4~6个字符";
+            return false;
+          }
+          if(document.forms[0].pw1.value.length < 4)
+          {
+          alert("a");
+            span2.innerText="密码必须大于4位";
+            return false;
+          }
+          if(document.forms[0].pw2.value != document.forms[0].pw1.value)
+          {
+           span3.innerText="请输入相同的密码";
+           return false;
+          }
+          
+        }
+    </script>
+  </head>
+  
+  <body>
+   <h2>注册新用户</h2>
+    <form>
+     <table border=1>
+       <tr><td class="text2">用 户 名</td><td class="text1"><input  type="text" name="username"></input><span id="span1"></span></td></tr>
+       <tr><td class="text2">密　码</td><td class="text1"><input  type="password" name="pw1"></input><span id="span2"></span></td></tr>
+       <tr><td class="text2">确认密码</td><td class="text1"><input  type="password" name="pw2"></input><span id="span3"></span></td></tr>
+       <tr><td class="text2">年　龄</td><td class="text1"><input type="text" name="age"></input></td></tr>
+       <tr><td class="text2">手 机 号</td><td class="text1"><input  type="text" name="phone"></input></td></tr>
+       <tr><td class="text2">电子邮箱</td><td class="text1"><input  type="text" name="mail"></input></td></tr>
+       <tr><td class="text2"><input type="submit" onclick="return test()" value="注册新用户"></input></td><td><input type="reset" value="重新填写"></input></td></tr>
+     </table>
+    </form>
+  </body>
+</html>

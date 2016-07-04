@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>getElementsByTagNmae.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+     <script type="text/javascript">
+       function test()
+       {
+          var hobbies = document.getElementsByName("hobby");
+          for(var i = 0;i < hobbies.length;i++)
+          {
+            if(hobbies[i].checked)
+            {
+              alert("你的爱好是"+hobbies[i].value);
+            }
+          }
+       }
+       function test2()
+       {
+      
+          var a = document.getElementsByTagName("input");
+          
+          for(var i = 0;i < a.length;i++)
+          {
+             alert(a[i].value);
+          }
+       }
+    
+    
+    </script>
+  </head>
+  
+  <body>
+    <input type="checkbox" name="hobby" value="足球">足球</input>
+     <input type="checkbox" name="hobby" value="音乐">音乐</input>
+     <input type="checkbox" name="hobby" value="游戏">游戏</input>
+     <input type="submit" onclick="test()" value="提交"></input>
+     <input type="button" onclick="test2()" value="按钮"></input>
+  </body>
+</html>

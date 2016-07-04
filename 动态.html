@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>动态.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+      function test()
+      {
+        //创建新元素
+        var myElement = document.createElement("a");
+        //给新元素添加信息
+        myElement.href="http://www.sina.com";
+        myElement.innerText="链接到新浪";
+        myElement.id="a1";
+        //将元素添加到div
+        document.getElementById("div1").appendChild(myElement);
+      }
+      function test2()
+      {
+        document.getElementById("div1").removeChild(document.getElementById("a1"));
+      }
+    </script>
+  </head>
+  
+  <body>
+     <input type="button" value="添加链接" onclick="test()"></input>
+     <input type="button" value="删除链接" onclick="test2()"></input>
+     <div id="div1">div1</div>
+  </body>
+</html>

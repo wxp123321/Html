@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>只可以输入数字.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+      function test(event)
+      {
+         if(event.keyCode < 48||event.keyCode > 57)
+         {
+           alert("请输入数字");
+           return false;
+         }
+      }
+    
+    </script>
+  </head>
+  
+  <body>
+    <input type="text" onkeypress="return test(event)"></input>
+  </body>
+</html>

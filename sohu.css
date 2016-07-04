@@ -1,0 +1,116 @@
+body
+{
+	width:950px;
+	height:800px;
+	border: 1px solid red;
+	margin: 0 auto;
+}
+.div1
+{
+	width:532px;
+	height:22px;
+	background-color: pink;
+	float:left;
+}
+.div2
+{
+	width:100px;
+	height:22px;
+	float:right;
+	background-color: green;
+}
+.div3
+{
+	float:left;
+	width:141px;
+	height:79px;
+	background-color: #FFFCDC;
+}
+.div4
+{
+	width:800px;
+	height:79px;
+	background-color: yellow;
+	float:left;
+	margin-left: 4px;
+}
+.div5
+{
+	margin-top:5px;
+	width:141px;
+	height:232px;
+	float:left;
+	background-color: silver;
+}
+.div6
+{
+	margin-top:5px;
+	margin-left:4px;
+	width:456px;
+	height:232px;
+	float:left;
+	background-color: green;
+}
+.div7
+{
+  margin-top:5px;
+  margin-left:4px;
+  width:159px;
+  height:232px;	
+  float:left;
+  background-color: #FDD000;
+}
+.div8
+{
+	margin-top:5px;
+	margin-left:8px;
+	width:173px;
+	height:232px;
+	float:left;
+	background-color: silver;
+	
+}
+.div3 img
+{
+	margin-top: 4px;
+	margin-left: 3px;
+	
+}
+.div8 img
+{
+	margin-top: 15px;
+	margin-left: 6px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

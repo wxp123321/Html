@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>小太阳.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+      var directX=20;//X轴坐标
+      var directY=20;//Y轴坐标
+      sunX=0;
+      sunY=0;
+      function sunMove()
+      {
+         sunX+=directX;
+         sunY+=directY;
+         //修改div的left top
+         div1.style.top=sunY+"px";
+         div1.style.left=sunX+"px";
+         
+         
+         if(sunX+div1.offsetWidth>=document.body.clientWidth||sunX<=0)
+         {
+           directX=-directX;
+         }
+         if(sunY+div1.offsetHeight>=500||sunY<0)
+         {
+           directY=-directY;
+         }
+         
+      }
+    setInterval("sunMove()",500);
+    </script>
+  </head>
+  
+  <body style="background-image: url('image/小孩1.png')">
+    <div id="div1" style="position:absolute;">
+       <img  src="image/a.png"/>
+    </div>
+  </body>
+</html>

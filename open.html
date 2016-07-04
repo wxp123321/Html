@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>open.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+        function test()
+        {
+           var a;
+           a=open("newWindow.html","_blank");
+        }
+        function test2()
+        {
+          
+          newWindow.document.getElementById("text1").vaule=document.getElementById("text2").value;
+          
+        }
+    
+    
+    </script>
+    
+    
+  </head>
+  
+  <body>
+      <input type="button" value="打开新窗口" onclick="test()"></input>
+      <input type="text"  id="text2"></input>
+      <input type="button" value="传递" onclick="test2()"></input>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+body
+{
+	margin: 0px;
+	padding: 0px;
+}
+div1
+{
+	width:100px;
+	height:700px;
+	border:1px solid #b4b4b4;
+	margin-left: 100px;
+	margin-top: 20px;
+}
+.faceul
+{
+	width:850px;
+	height:550px;
+	border:1px solid red;
+}
+.faceul li
+{
+	width:100px;
+	height:90px;
+	border:1px solid blue;
+	margin-top: 10px;
+	margin-left: 10px;
+	list-style-type: none;
+	float:left;
+}
+img
+{
+	margin-top: 10px;
+	margin-left: 15px;
+}
+
+
+
+
+
+
+
+
+

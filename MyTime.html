@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MyTime.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+      function time()
+      {
+        document.getElementById("mytime").innerText=new Date().toLocaleString();
+      }
+      setInterval("time()",1000);
+    </script>
+
+
+
+  </head>
+  
+  <body>
+     <span id="mytime"></span>
+  </body>
+</html>

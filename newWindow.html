@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>newWindow.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+        function test3()
+        {
+          opener.document.getElementById("text2").value=document.getElementById("text1").value;
+        }
+    
+    
+    </script>
+  </head>
+  
+  <body>
+    我是新窗口
+    <input type="text" id="text1"></input>
+    <input type="button" value="传递" onclick="test3()"></input>
+  </body>
+</html>

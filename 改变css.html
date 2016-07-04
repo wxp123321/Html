@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>改变css.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+   <link rel="stylesheet" type="text/css" href="./my2.css">
+   <script type="text/javascript">
+   function test(e)
+   {
+     var ocssRules = document.styleSheets[0].rules;
+     //var ocssRules = document.styleSheets[0].cssRules;
+     var style1 = ocssRules[0];
+     if(e.value == "红色")
+     {
+       style1.style.backgroundColor="red";
+     }
+     else if(e.value == "黑色")
+     {
+        style1.style.backgroundColor="black";
+     }
+   }
+   
+   </script>
+  </head>
+  
+  <body>
+    <div class="div1"></div>
+    <input type="button" value="红色" onclick="test(this)"/>
+     <input type="button" value="黑色" onclick="test(this)"/>
+  </body>
+</html>

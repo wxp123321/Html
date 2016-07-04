@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>新的绑定事件.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+       function test()
+       {
+         document.write("Hello");
+       }
+    
+    </script>
+  </head>
+  
+  <body>
+    <input type="button" value="点击" id="button"></input>
+    <script type="text/javascript">
+      document.getElementById("button").onclick=test;
+    
+    
+    </script>
+  </body>
+</html>

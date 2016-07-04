@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ma.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <link rel="stylesheet" type="text/css" href="./ma.css">
+
+    <script type="text/javascript">
+    
+       function ma(direction)
+       {
+       this.x = 0;
+       this.y = 0;
+       this.move = function(direction)
+       {
+        //0右  1上  2左  3下 
+         switch(direction)
+         {
+           case 0:
+          
+            var myMa = document.getElementById('img1');
+            var left = myMa.style.left;
+            left = parseInt(left.substr(0,left.length-2));
+            if(left>1150)
+            {
+             alert("碰到墙了");
+            }
+            else
+            {
+            myMa.style.left = (left+20)+"px";
+            }
+            break;
+            case 2:
+            var myMa = document.getElementById("img1");
+            var left = myMa.style.left;
+            left = parseInt(left.substr(0,left.length-2));
+            if(left<720)
+            {
+             alert("碰到墙了");
+            }
+            else
+            {
+            myMa.style.left = (left-20)+"px";
+            }
+            break;
+            case 1:
+              var myMa = document.getElementById("img1");
+            var top = myMa.style.top;
+            top = parseInt(top.substr(0,top.length-2));
+            if(top<15)
+            {
+             alert("碰到墙了");
+            }
+            else
+            {
+            myMa.style.top = (top-20)+"px";
+            }
+            break;
+            case 3:
+              var myMa = document.getElementById("img1");
+            var top = myMa.style.top;
+            top = parseInt(top.substr(0,top.length-2));
+            if(top>350)
+            {
+            alert("碰到墙了");
+            }
+            else
+            {
+            myMa.style.top = (top+20)+"px";
+            }
+            break;
+            
+         }
+          
+       }
+       
+       }
+    var ma = new ma();
+    function move2(direction)
+    {
+    switch(direction)
+    {
+     case 0:
+        ma.move(direction);
+        break;
+     case 1: 
+        ma.move(direction);
+        break;
+     case 2:
+        ma.move(direction);
+        break;
+     case 3:
+        ma.move(direction);
+        break;
+    
+    }
+    }
+    
+
+    
+    </script>
+
+
+
+
+  </head>
+  
+  <body>
+    <div class="div1">
+       <img id="img1" style="width:50px; left:720px;top:20px; position:absolute;" src="image/b.png"></img>
+    
+    </div>
+    <table border="1px" class="table1">
+    <tr><td colspan="3"  align="center">控制键盘</td></tr>
+        <tr><td align="center">**</td><td>&nbsp;&nbsp;<input type="button" value="上" onclick="move2(1)"></input></td><td align="center">**</td></tr>
+            <tr><td>&nbsp;&nbsp;<input type="button" value="左" onclick="move2(2)"></input></td><td  align="center">**</td><td>&nbsp;&nbsp;<input type="button" value="右" onclick="move2(0)"></input></td></tr>
+                <tr><td  align="center">**</td><td>&nbsp;&nbsp;<input type="button" value="下" onclick="move2(3)"></input></td><td  align="center">**</td></tr>
+    
+    
+    
+    
+    
+    
+    
+    </table>
+    
+  </body>
+</html>

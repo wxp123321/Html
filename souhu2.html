@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>souhu2.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+   <link rel="stylesheet" type="text/css" href="sohu2.css">
+   <script type="text/javascript">
+    function test1(obj)
+    {
+      if(obj == 'xs')
+      {
+    
+       document.getElementById("div3").style.display = "block";
+        document.getElementById("div4").style.display = "none";
+      }
+      else if(obj == 'xs2')
+      {
+ 
+       document.getElementById("div4").style.display = "block";
+       document.getElementById("div3").style.display = "none";
+      }
+    
+    }
+    function test2(obj)
+    {
+      if(obj == 'x')
+      {
+        document.getElementById("div3").style.display = "none";
+      }
+      else if(obj == 'x2')
+      {
+        document.getElementById("div4").style.display = "none";
+      }
+      
+    }
+   </script>
+  </head>
+  
+  <body>
+    <div class="div1">
+       <div class="div2">
+         <ul class="u">
+           <li class="l1" onmouseover="test1('xs')" onmouseout="test2('x')">热销</li>
+           <li class="l2" onmouseover="test1('xs2')" onmouseout="test2('x2')">新盘</li>
+           <li>家装</li>
+           <li>二手房</li>
+         </ul>
+        </div>
+        
+        <div id="div3" class="div3">
+          <ul class="u2">
+            <li><a href="#">热销热销热销热销热销</a></li>
+            <li><a href="#">热销热销热销热销热销</a></li>
+            <li><a href="#">热销热销热销热销热销</a></li>
+            <li><a href="#">热销热销热销热销热销</a></li>
+            <li><a href="#">热销热销热销热销热销</a></li>
+             <li><a href="#">热销热销热销热销热销</a></li>
+            <li><a href="#">热销热销热销热销热销</a></li>
+             <li><a href="#">热销热销热销热销热销</a></li>
+           <li><a href="#">热销热销热销热销热销</a></li>
+            <li><a href="#">热销热销热销热销热销</a></li>
+          </ul>
+        </div>
+         <div id="div4" class="div4" style="display:none;">
+          <ul class="u3">
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+            <li><a href="#">二飞二飞二飞二飞二飞</a></li>
+          </ul>
+        </div>
+        
+         
+      
+    
+    
+    
+    
+    </div>
+  </body>
+</html>
