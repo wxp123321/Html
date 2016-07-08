@@ -1,0 +1,14 @@
+﻿<h2>绘制文字</h2>
+<canvas id = "mc" width = "600" height = "280"
+style = "border:1px solid black"></canvas>
+<script type="text/javascript">
+ var canvas = document.getElementById('mc');
+ var ctx = canvas.getContext('2d');
+ ctx.fillStyle = '#00f';
+ ctx.font = 'italic 50px 隶书';
+ 
+ ctx.fillText('疯狂java讲义', 0, 50);
+ ctx.strokeStyle = '#f0f';
+ ctx.font = 'bold 45px 宋体';
+ ctx.strokeText('轻量级java EE企业应用实战', 0, 100);
+</script>

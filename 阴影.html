@@ -1,0 +1,30 @@
+﻿<html>
+     <h2> 启用阴影 </h2>
+     <canvas id = "mc" width = "600" height = "280"
+         style = "border:1px solid black"></canvas>
+     <script type="text/javascript">
+     var canvas = document.getElementById('mc');
+     var ctx = canvas.getContext('2d');
+     ctx.shadowBlur = 5.6;
+     ctx.shadowColor = "#222";
+     ctx.shadowOffsetX = 10;
+     ctx.shadowOffsetY = -6;
+     ctx.fillStyle = "#00f";
+     ctx.font = "italic 50px 隶书";
+     ctx.textBaseline = "tope";
+     ctx.fillText("疯狂Java讲义",50,50);
+     ctx.strokeStyle = "#f0f";
+     ctx.font = "blod 45px 宋体";
+     ctx.strokeText("轻量级",50,100);
+     ctx.fillRect(20,150,180,80);
+     ctx.lineWidth = 8;
+     ctx.strokeRect(300,150,180,80);
+
+
+     </script>
+
+
+
+
+
+</html>

@@ -1,0 +1,18 @@
+﻿<h2>绘制矩形</h2>
+<canvas id = "mc" width = "400" height = "280" 
+style = "border:1px solid black"></canvas>
+<script type="text/javascript">
+ //获取canvas元素对应的DOM对象
+ var canvas = document.getElementById('mc');
+ var ctx = canvas.getContext('2d');
+ ctx.fillStyle = '#f00';
+ ctx.fillRect(30, 20, 120, 60);
+ ctx.fillStyle = '#ff0';
+ ctx.fillRect(80, 60, 120, 60);
+ ctx.strokeStyle = "#0ff";
+ ctx.linJoin = "round";
+ ctx.strokeRect(80, 160, 120, 60);
+ ctx.strokeStyle = "#f0f";
+ ctx.linJoin = "bevel";
+ ctx.strokeRect(130, 190, 120, 60);
+</script>
