@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>日历.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+     <style>
+         .box
+         {
+           width: 150px;
+           height: 180px;
+           background-color: #369;
+           margin: 100px auto;
+           text-align: center;
+         }
+         .box p 
+         {
+           text-align: center;
+           line-height: 60px;
+           font-size: 12px;
+           color: #fff;
+         }
+         .box span
+         {
+           display: block;
+           width: 75px;
+           height: 75px;
+           font-size: 50px;
+           color: #000;
+           background-color: yellowgreen;
+           line-height: 75px;
+           text-align: center;
+           margin: 0 auto;
+         }
+     </style>
+     <script type="text/javascript">
+       window.onload = function()
+       {
+         var box = document.getElementById("box");
+         var boys = box.children;
+         var date = new Date();
+         var arr = ["星期日","星期一","星期二","星期三","星期四","星期五","星期六"];
+         boys[0].innerHTML = date.getFullYear()+"年"+(date.getMonth()+1)+"月"+date.getDate()
+         +"日"+"  "+arr[date.getDay()];
+         boys[1].innerHTML = date.getDate();
+       }
+     </script>
+  </head>
+  
+  <body>
+   <div class="box" id="box">
+     <p></p>
+     <span></span>
+   </div>
+  </body>
+</html>

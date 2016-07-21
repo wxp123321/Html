@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>倒计时.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+       body
+       {
+         font-size: 30px;
+         text-align: center;
+         color: red;
+       }
+    </style>
+    <script type="text/javascript">
+       window.onload = function()
+       {
+      
+         var demo = document.getElementById("demo");
+         var endtime = new Date("2016/12/12 20:00:00");  //最终时间
+         setInterval(clock,1000);
+         function clock()
+         {
+           var nowTime = new Date();
+           var s = parseInt((endtime.getTime()-nowTime.getTime())/1000);
+           var d = parseInt(s/3600/24); //天
+           var h = parseInt(s/3600%24); //小时
+           var m = parseInt(s/60%60);  //分
+           var s2 = parseInt(s%60); //秒
+           d<10 ? d="0"+d : d;
+           h<10 ? h="0"+h : h;
+           m<10 ? m="0"+m : m;
+           s2<10 ? s2="0"+s2 : s2;
+           demo.innerHTML = "距离抢购时间还剩:"+d+"天"+h+"小时"+m+"分"+s2+"秒";
+         };
+       };
+    </script>
+  </head>
+  
+  <body>
+   <div id="demo"></div>
+  </body>
+</html>

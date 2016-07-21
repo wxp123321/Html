@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>短信验证.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+     <script type="text/javascript">
+       window.onload = function()
+       {
+         var btn = document.getElementById("btn");
+         var timer = null;
+         btn.onclick = function()
+         {
+           var count = 5;
+           btn.disabled = true;
+           timer = setInterval(fun,1000);
+           function fun()
+           {
+             if(count > 0)
+             {
+               count--;
+               btn.innerHTML="还剩余"+count+"秒";
+             }
+             else
+             {
+               btn.innerHTML="重新发送短信";
+               clearInterval(timer);
+               btn.disabled = false;
+             }
+            
+           }
+         }
+       }
+     </script>
+  </head>
+  
+  <body>
+    <input type="text">
+    <button id="btn">发送短信到手机上</button>
+  </body>
+</html>

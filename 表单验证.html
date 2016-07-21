@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>表单验证.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      .box
+      {
+        text-align: center;
+        margin: 100px auto;
+      }
+      span
+      {
+        display: inline-block;
+        width: 150px;
+        height: 20px;
+        border: 1px solid #ccc;
+        font-size: 12px;
+        line-height: 20px;
+        text-align:left;
+        padding-left: 20px;
+        background-color: #eee;
+        color: #999;
+      }
+      .right
+      {
+        color: #5EFF5E;
+        background: url(images/right/png) no-repeat #DFFFDF 4px 3px;
+        border: 1px solid #ACFFAC;
+      }
+      .wrong
+      {
+        background: url(images/wrong.png) no-repeat #FFDCD0 4px 3px;
+        border:1px solid #FFAC91;
+        color: 3FF6B39；
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function()
+      {
+        function $(id){return document.getElementById(id);}
+        $("txt").onblur = function()
+        {
+          if(this.value == "")
+          {
+            $("result").className = "wrong";
+            $("result").innerHTML = "内容不能为空";
+          }
+          else if(isNaN(this.value))
+          {
+            $("result").className = "wrong";
+            $("result").innerHTML = "请输入数字";
+          }
+          else if(this.value > 150 || this.value < 0)
+          {
+            $("result").className = "wrong";
+            $("result").innerHTML = "请输入合理范围";
+          }
+          else
+          {
+            $("result").className = "right";
+            $("result").innerHTML = "输入正确";
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div class="box">
+      语文: <input type="text" id="txt"/> <span id="result">请输入成绩</span> 
+    </div>
+  </body>
+</html>

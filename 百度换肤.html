@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>百度换肤.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      *
+      {
+        padding:0;
+        margin:0;
+      }
+      body
+      {
+       background: url(images/1.jpg) top center;
+      }
+      .box
+      {
+        height: 150px;
+        text-align:center;
+        padding-top: 50px;
+        background: rgba(255,255,255,.3);
+      }
+      .box img
+      {
+        cursor: pointer;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function()
+      {
+        var pic1 = document.getElementById("pic1");
+        var pic2 = document.getElementById("pic2");
+        var pic3 = document.getElementById("pic3");
+        pic1.onclick = function()
+        {
+          document.body.style.background = "url(images/1.jpg) top center";
+        }
+        pic2.onclick = function()
+        {
+          document.body.style.background = "url(images/2.jpg) top center";
+        }
+        pic3.onclick = function()
+        {
+          document.body.style.background = "url(images/3.jpg) top center";
+        }
+      };
+    </script>
+  </head>
+  
+  <body>
+    <div class="box">
+       <img src="images/1.jpg" width="150px" id="pic1">
+       <img src="images/2.jpg" width="150px" id="pic2">
+       <img src="images/3.jpg" width="150px" id="pic3">
+    </div>
+  </body>
+</html>

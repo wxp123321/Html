@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>判断函数参数.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    
+    <script type="text/javascript">
+      function fn(a,b)
+      {
+        console.log(fn.length);
+        console.log(arguments.length);
+        if(fn.length == arguments.length)
+        {
+          console.log(a+b);
+        }
+        else
+        {
+         console("应该传入的参数个数为"+fn.length);
+        }
+      }
+      fn(1,2);
+    </script>
+  </head>
+  
+  <body>
+    
+  </body>
+</html>

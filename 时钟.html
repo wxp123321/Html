@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>时钟.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      .block
+      {
+        width: 600px;
+        height: 600px;
+        margin: 50px auto;
+        background: url(images/clock.jpg) no-repeat;
+        position: relative;
+      }
+      .block div
+      {
+        height:100%;
+        width: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .h
+      {
+        background: url(images/hour.png) no-repeat center center; 
+      }
+      .m
+      {
+        background: url(images/minute.png) no-repeat center center; 
+      }
+      .s
+      {
+        background: url(images/second.png) no-repeat center center; 
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function()
+      {
+      
+        var hour = document.getElementById("hour"); 
+        var minute = document.getElementById("minute"); 
+        var second = document.getElementById("second"); 
+        var h = 0, m = 0, s = 0; ms = 0;
+        setInterval(function(){
+         var date = new Date();
+         ms = date.getMilliseconds();       //毫秒
+         s = date.getSeconds();  //秒
+         m = date.getMinutes() + s/60;    //分
+         h = date.getHours()%12 + m/60;  //时
+             //旋转角度
+        //一圈360° 一共60秒， 每秒6° 
+        second.style.WebkitTransform = "rotate("+s*6+"deg)";
+        //一圈360° 一共60分 每分6°
+        minute.style.WebkitTransform = "rotate("+m*6+"deg)";
+        //一圈360°  一共12小时  每小时30°
+        hour.style.WebkitTransform = "rotate("+h*30+"deg)";
+        second.style.MozTransform = "rotate("+s*6+"deg)";
+         },1000);   
+      };
+    </script>
+  </head>
+  
+  <body>
+    <div class="block">
+      <div class="h" id="hour"></div>
+      <div class="m" id="minute"></div>
+      <div class="s" id="second"></div>
+    </div>
+  </body>
+</html>
+
+

@@ -11,12 +11,13 @@
     <script type="text/javascript">
        function test()
        {
-         var str=text1.value;
-         var reg=/(\d)/gi;
-        while(ree=reg.exec(str))
-        {
-         alert(ree[0]);
-        }
+         var val = document.getElementById("text1").innerText;
+         var myReg= new RegExp("(\\d)","gi");
+         var a = "1234";
+         while(arr=myReg.exec(a) != null)
+         {
+          alert(arr.length);
+         }
        }
     </script>
   </head>

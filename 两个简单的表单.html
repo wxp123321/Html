@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>两个简单的表单.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+     <script type="text/javascript">
+        window.onload = function()
+        {
+          var txt = document.getElementById("txt");
+          var sole = document.getElementById("sole");
+          txt.focus();
+          sole.onmouseover = function()
+          {
+            this.select();
+          }
+        }
+     </script>
+  </head>
+  
+  <body>
+  自动获得焦点
+    <input type="text" id="txt">
+ 鼠标经过选择表单   
+    <input type="text" id="sole">
+  </body>
+</html>

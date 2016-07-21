@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>上传正确格式文件.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var file = document.getElementById("File");
+			file.onchange = function()
+			{
+				var path = this.value;   //得到文件的路径
+				var suxxif = path.substr(path.lastIndexOf(".")).toUpperCase();
+				//得到后缀名 并且将其转换为大写
+				if(suxxif == ".JPG" || suxxif == ".PNG")
+				{
+					this.nextSibling.innerHTML = "格式正确";
+				}
+				else
+				{
+					this.nextSibling.innerHTML = "格式错误";
+				}
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+    <input type="file" id="File"/><span></span>
+  </body>
+</html>

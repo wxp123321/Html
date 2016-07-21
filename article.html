@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>article.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+  <!-- 帖子的“头部” -->
+    <article>
+      <h1>学习Android,必须先学习Java吗</h1>
+      <div>作者： crazystu</div>
+    </article>
+    <p>
+      学习Android,必须先学习Java吗？
+      Android上的应用程序只能用Java编写吗？可以用C++吗？</p>
+      <!-- 帖子的“回复”部分，用section元素表示 -->
+      <section>
+         <!-- 每个article代表一个回复 -->
+         <article>
+           <!-- 回复的头部 -->
+           <header>
+             <h2>还是得学习Java</h2>
+             <div>作者：kongas</div>
+           </header>
+           <p>
+                      虽然安卓不一定要用java开发，还可以选择JavaScript<br>
+                      或NDK开发，但Java毕竟是安卓主要的开发语言<br>
+                      因此建议学习安卓之前还是先学习Java
+           </p>
+         </article>
+         <!-- 每个article代表一个回复 -->
+         <article>
+          <header>
+            <h2>Java是安卓的基础</h2>
+            <div>作者：；asfasf</div>
+          </header>
+           <p>
+            java是基础，学好Java再去学安卓事半功倍
+           </p>         
+         </article>
+      </section>
+      <!-- 帖子的“脚注” -->
+      <footer>
+       以上帖子和回复只代表个人观点，不代表疯狂Java联盟的观点或立场      
+      </footer>
+  </body>
+</html>

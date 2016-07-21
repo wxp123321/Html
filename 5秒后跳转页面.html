@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>5秒后跳转页面.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+	  window.onload = function()
+	  {
+	  	var demo = document.getElementById("demo");
+	  	var count = 5;
+	  	setTimeout(fn,1000);
+	  	function fn()
+	  	{
+        	count--;
+        	demo.innerHTML = "<a href='http://www.baidu.com'>5秒后自动跳转页面</a>"
+        	if(count <= 0)
+        	{
+        		window.location.href = "http://www.baidu.com";
+        	}	  		
+        	else
+        	{
+        		setTimeout(fn,1000);
+        	}
+	  	}
+	  }
+	</script>
+  </head>
+  
+  <body>
+    <div id="demo"></div>
+  </body>
+</html>

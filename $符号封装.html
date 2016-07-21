@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>$符号封装.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+    	div
+    	{
+    		width: 100px;
+    		height: 100px;
+    		background-color: pink;
+    		margin: 10px;
+    	}
+    </style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			   function getClass(classname)
+   		   {
+	   		//如果浏览器支持
+	   		if(document.getElementsByClassName)
+		   	{
+		   		return document.getElementsByClassName(classname);
+		   	}
+	   		//如果浏览器不支持
+	   		var arr = [];
+	   		var dom = document.getElementsByTagName("*");
+	   		for(var i = 0; i < dom.length;i++)
+		   	{
+			   var arr2 = dom[i].className.split(" ");
+			   for(var j = 0; j < arr2.lengthl;j++)
+				   {
+				   if(classname == arr2[j])
+					   {
+					   arr.push(arr2[i]);
+					   }
+				   }
+		     }
+	   		return arr;
+   			}
+   			
+   			
+		  function $(str)
+		  {
+		  	var s = str.charAt(0);  
+		  	var ss = str.substr(1);
+		  	switch(s)
+		  	{
+		  		case "#":
+		  		   return document.getElementById(ss);
+		  		   break;
+		  		case ".":
+		  			return getClass(ss);
+		  			break;
+		  	    default:
+		  	    	return document.getElementsByTagName(str);
+		  	    	break;
+		  	}
+		  }	
+			
+			$("#demo").style.backgroundColor = "blue";
+			var test = $(".div1");
+			for(var i = 0; i < test.length;i++)
+			{
+				test[i].style.backgroundColor = "red";
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+	<div id="demo"></div>
+	<div class="div1"></div>
+	<div class="div1"></div>
+	<div></div>
+	<div></div>
+	<div></div>
+  </body>
+</html>

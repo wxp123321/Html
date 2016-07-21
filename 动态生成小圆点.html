@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>动态生成小圆点.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+   <style type="text/css">
+     *
+     {
+       margin:0;
+       padding: 0;
+     }
+     ul,ol
+     {
+       list-style: none;
+     }
+     .box
+     {
+      width: 730px;
+      height: 454px;
+      margin: 100px auto;
+      overflow: hidden;
+      position: relative;
+     }
+     .circle
+     {
+        position: absolute;
+        left: 50%;
+        margin-left: -50px;
+        bottom: 10px;
+     }
+     .circle span
+     {
+       float: left;
+       width: 18px;
+       height: 18px;
+       border-radius: 50%;
+       background-color: pink;
+       text-align: center;
+       margin-right: 10px;
+       cursor: pointer;
+       line-height: 18px;
+     }
+     
+   </style>
+   <script type="text/javascript">
+     window.onload = function()
+     {
+       var scroll = document.getElementById("scroll");
+       var circle = document.createElement("div");
+       circle.className = "circle";
+       scroll.appendChild(circle);
+       var ul = document.getElementById("ul");
+       var lis = ul.children;
+       for(var i = 0;i < lis.length;i++)
+       {
+         var newspan = document.createElement("span");
+         newspan.innerHTML = i+1;
+         circle.appendChild(newspan);
+       }
+       
+     }
+   </script>
+  </head>
+  
+  <body>
+    <div class="box" id="scroll">
+    <div>
+      <ul id="ul">
+        <li><img src="images/11.jpg"></li>
+        <li><img src="images/22.jpg"></li>
+        <li><img src="images/33.jpg"></li>
+        <li><img src="images/44.jpg"></li>
+        <li><img src="images/55.jpg"></li>
+        <li><img src="images/66.jpg"></li>
+      </ul>
+      </div>
+    </div>
+  </body>
+</html>

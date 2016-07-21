@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>搜索框2.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+     .search
+     {
+       width: 300px;
+       height: 30px;
+       margin: 100px auto;
+       position: relative;
+     }
+     .search input
+     {
+       width: 200px;
+       height: 25px;
+     }
+     .search label
+     {
+       position: absolute;
+       top: 7px;
+       left: 10px;
+       color: #ccc;
+       cursor: text;
+     }
+    </style>
+    <script type="text/javascript">
+      window.onload = function()
+      {
+        var txt = document.getElementById("txt");
+        var la = document.getElementById("label1");
+        txt.focus();
+        txt.oninput = txt.onpropertychange = function()
+        {
+          if(txt.value == "")
+          {
+            la.style.display = "block";
+          }
+          else
+          {
+           la.style.display = "none";
+          }
+        }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div class="search">
+      <input type="text" id="txt"/>
+      <label for="txt" id="label1">必败的国际大牌</label>
+    </div>
+  </body>
+</html>

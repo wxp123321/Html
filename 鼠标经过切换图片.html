@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>鼠标经过切换图片.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+
+    <img id="img1" alt="" src="images/jd1.png">
+    <script type="text/javascript">
+      var jd_img = document.getElementById("img1");
+      jd_img.onmouseover = function()
+      {
+        jd_img.src = "images/jd2.png";
+      } 
+       jd_img.onmouseout = function()
+      {
+        jd_img.src = "images/jd1.png";
+      } 
+      
+    </script>
+  </body>
+</html>

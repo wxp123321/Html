@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>搜索框.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+     <style type="text/css">
+       *
+       {
+         padding:0;
+         margin: 0;
+       }
+       .search
+       {
+         width: 258px;
+         height: 40px;
+         margin: 100px auto;
+         background-color: pink;
+       }
+       .search input
+       {
+         width: 208px;
+         height: 40px;
+         background: url(images/left.jpg) no-repeat;
+         outline-style: none;
+         padding-left: 8px;
+         color: #ccc;
+         float: left;
+         border: 0 none;
+       }
+       .search button
+       {
+         height: 40px;
+         width: 42px;
+         background: url(images/right.jpg) no-repeat;
+         float: left;
+         cursor: pointer;
+         border: 0 none;
+       }
+     </style>
+     <script type="text/javascript">
+       window.onload = function()
+       {
+         var obj = document.getElementById("txt");
+         obj.onfocus = function()
+         {
+           if(obj.value == "请输入..")
+           {
+             obj.value = "";
+             obj.style.color = "#333";
+           }
+         }
+         obj.onblur = function()
+         {
+           if(obj.value == "")
+           {
+             obj.value= "请输入..";
+             obj.style.color = "#ccc";
+           }
+         }
+       }
+     </script>
+  </head>
+  
+  <body>
+    <div class="search">
+       <input type="text" value="请输入.." id="txt"/>
+       <button></button>
+    </div>
+  </body>
+</html>

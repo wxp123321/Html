@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>函数参数控制盒子.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+     <style type="text/css">
+       div
+       {
+          width:100px;
+          height:100px;
+          background-color: pink;
+          margin:20px;
+          display: none;
+       }
+     </style>
+     <script type="text/javascript">
+       function fn(obj)
+       {
+         var target = document.getElementById(obj);
+         target.style.display = "block";
+       }
+     </script>
+  </head>
+  
+  <body>
+    <button onclick="fn('div1');">显示第一个盒子</button>
+    <button onclick="fn('div2');">显示第二个盒子</button>
+    <button onclick="fn('div3');">显示第三个盒子</button>
+    <button onclick="fn('div4');">显示第四个盒子</button>
+    <div id="div1">1</div>
+    <div id="div2">2</div>
+    <div id="div3">3</div>
+    <div id="div4">4</div>
+  </body>
+</html>
