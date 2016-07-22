@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>鼠标点击移动.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style type="text/css">
+		img
+		{
+			width: 88px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var image = document.getElementById("image");
+			var leaderX = 0;
+			var	leaderY = 0;
+			var targetX = 0;
+			var targetY = 0;
+			document.onclick = function(event)
+			{
+				var event = event || window.event;
+				targetX = event.clientX - image.offsetWidth/2;
+				targetY = event.clientY - image.offsetHeight/2;
+			}
+			setInterval(function(){
+				leaderX = leaderX + (targetX - leaderX)/10;
+				leaderY = leaderY + (targetY - leaderY)/10;
+				image.style.left = leaderX + "px";
+				image.style.top = leaderY + "px";
+			},30);
+		}
+	</script>
+  </head>
+  
+  <body>
+  	<img id="image" src="images/img.jpg"/>
+  </body>
+</html>

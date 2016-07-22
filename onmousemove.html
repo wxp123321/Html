@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>onmousemove.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style type="text/css">
+		*
+		{
+			margin: 0;
+			padding：0；
+		}
+		.demo
+		{
+			width:400px;
+			height: 400px;
+			background-color: pink;
+			margin: 100px;
+		}
+	</style>
+	<script type="text/javascript">
+	window.onload = function()
+	{
+		var div = document.getElementsByTagName("div")[0];
+		div.onclick = function(event)
+		{
+			var event = event || window.event;
+			var x = event.clientX - div.offsetLeft;
+			var y = event.clientY - div.offsetTop;
+			div.innerHTML = x + "px" + y + "px";
+		}
+	}
+	</script>
+  </head>
+  
+  <body>
+    <div class="demo"></div>
+  </body>
+</html>
