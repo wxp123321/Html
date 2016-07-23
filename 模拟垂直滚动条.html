@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>模拟垂直滚动条.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style type="text/css">
+		.box
+		{
+			width: 300px;
+			height: 500px;
+			border: 1px solid red;
+			margin: 100px;
+			position: relative;
+			overflow: hidden;
+		}
+		.content
+		{
+			height: auto;
+			padding: 5px 18px 5px 5px;
+			position: absolute;
+			top: 0;
+			left : 0;
+			
+		}
+		.scroll
+		{
+			width: 18px;
+			height: 100%;
+			position: absolute;
+			top: 0;
+			right: 0;
+			background-color: #eee;
+		}
+		.bar
+		{
+			width: 100%;
+			height: 100px;
+			background-color: red;
+			cursor: pointer;
+			border-radius: 10px;
+			position: absolute;
+			top: 0;
+			left: 0;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var box = document.getElementById("box");
+			var content = document.getElementById("content");
+			var bar = document.getElementById("bar");
+			var scroll = document.getElementById("scroll");
+			var height = box.offsetHeight/content.offsetHeight* box.offsetHeight;
+			bar.style.height = height + "px";
+			start(bar,content);
+			function start(obj,target)
+			{
+				obj.onmousedown = function(event)
+				{
+					var event = event || window.event;
+					var y = event.clientY - this.offsetTop;
+					var that = this;
+					document.onmousemove = function(event)
+					{
+						var event = event || window.event;
+						var barTop = event.clientY - y;
+						var contentTop = (target.offsetHeight - target.parentNode.offsetHeight)/(target.parentNode.offsetHeight - that.offsetHeight) * barTop;
+						if(barTop < 0)
+						{
+							barTop = 0;
+						}
+						else if(barTop > target.parentNode.offsetHeight - that.offsetHeight)
+						{
+							barTop = target.parentNode.offsetHeight - that.offsetHeight;
+						}
+						else
+						{
+							target.style.top = -contentTop +"px";
+						}
+						obj.style.top = barTop +"px";
+						window.getSelection ? window.getSelection().removeAllRanges() : document.selection.empty();
+					}
+				}
+				document.onmouseup = function()
+				{
+					document.onmousemove = null;
+				}
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+    <div class="box" id="box">  
+    	<div class="content" id="content">
+    		文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+     文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分文字内容部分
+    		
+    	</div>
+    	<div class="scroll" id="scroll">
+    		<div class="bar" id="bar"></div>
+    	</div>
+    </div>
+  </body>
+</html>
