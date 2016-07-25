@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>返回头部的小火箭.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		body
+		{
+			width: 2000px;
+		}
+		.top
+		{
+			position: fixed;
+			right:50px;
+			bottom: 100px;
+			display:none;
+		}
+	</style>
+  </head>
+  
+  <body>
+  	<div id="gotop" class="top">
+    <img src="images/Top.jpg" alt=""/>
+</div>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+<p>我是内容部分，有很多恩多很多</p>
+    
+  </body>
+</html>
+<script src="my.js"></script>
+<script>
+window.onload = function()
+{
+	var goTop = $("gotop");
+	var leader = 0, target = 0,timer = null;
+	window.onscroll = function()
+	{
+		scroll().top > 0 ? show(goTop) : hide(goTop);
+		leader = scroll().top;   // 卷去的头部给起始位置
+	}
+		goTop.onclick = function()
+		{
+		timer = setInterval(function()
+		{
+			target = 0;
+			leader = leader + (target - leader ) / 10;
+			window.scrollTo(0,leader);  //去往页面中的某个位置
+			if(leader == target)
+			{
+				clearInterval(timer);
+			}
+		},20);
+			
+		}
+}	
+</script>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>封装自己的scroll类.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style type="text/css">
+		body
+		{
+			height: 3000px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			function scroll()
+			{
+				if(window.pageYOffset != null)   //ie9 和其他浏览器
+				{
+					return {
+						left: window.pageXOffset,
+						top:window.pageYOffset
+					}
+				}
+				else if(document.compatMode == "CSS1Compat") //检测是不是怪异的浏览器
+				{
+					return {
+						left: document.documentElement.scrollLeft,
+						top: document.documentElement.scrollTop
+					}
+				}
+				return {
+					left: document.body.scrollLeft,
+					top: document.body.scrollTop
+				}
+				
+			}
+			window.onscroll = function()
+			{
+				console.log(scroll().top);
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+    
+  </body>
+</html>

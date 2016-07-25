@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>窗口滚动效果.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style type="text/css">
+		body
+		{
+			height: 3000px;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+			document.title = scrollTop;
+			console.log(scrollTop);
+		}
+	</script>
+  </head>
+  
+  <body>
+    
+  </body>
+</html>
