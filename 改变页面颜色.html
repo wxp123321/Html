@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>改变页面颜色.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			function client()
+{
+	if(window.innerWidth != null)        //ie9 和最新浏览器
+		{
+			return {
+				width: window.innerWidth,
+				height: window.innerHeight
+			}
+		}
+	else if(document.compatMode === "CSS1Compat")   //正常浏览器
+		{
+			return {
+				width: document.documentElement.clientWidth,
+				height: document.documentElement.clientHeight
+			}
+		}
+	return {                 //怪异浏览器
+		width: document.body.clientWidth,
+		height: document.body.clientHeight
+	}
+}
+			reSize();
+			window.onresize = reSize;
+			function reSize()
+			{
+				var clientWidth = client().width;
+				if(clientWidth > 1000)
+				{
+					document.body.style.backgroundColor = "red";
+				}
+				else if(clientWidth >850)
+				{
+					document.body.style.backgroundColor = "green";
+				}
+				else
+				{
+					document.body.style.backgroundColor = "blue";
+				}
+			}
+		} 
+	</script>
+  </head>
+  
+  <body>
+   
+  </body>
+</html>

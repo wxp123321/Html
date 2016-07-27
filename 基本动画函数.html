@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>基本动画函数.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	
+	<style type="text/css">
+		div
+		{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			function $(id)
+			{
+				return document.getElementById(id);
+			}
+			$("btn200").onclick = function()
+			{
+				animate($("run"),200);
+			}
+			$("btn400").onclick = function()
+			{
+				animate($("run"),400);
+			}
+			var arr = [];
+			function animate(obj,target)
+			{
+				obj.timer = setInterval(function(){
+					if(obj.offsetLeft >= target)
+					{
+						clearInterval(obj.timer);
+					}
+					obj.style.left = obj.offsetLeft + 10 + "px";
+				},30);
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+    <button id="btn200">200</button>
+	<button id="btn400">400</button>
+	<div id="run"></div>
+  </body>
+</html>
