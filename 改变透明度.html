@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>改变透明度.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style type="text/css">
+		div
+		{
+			width: 100px;
+			height: 100px;
+			background-color: pink;
+			position: absolute;
+			top: 50px;
+			left: 0;
+			border-radius: 50%;
+		}
+	</style>
+	<script type="text/javascript">
+		window.onload = function()
+		{
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var box = document.getElementById("box");
+			btn1.onclick = function()
+			{
+				animate(box,{width: 200,top: 100,left: 200,opacity: 40,zIndex:3});
+			}
+			btn2.onclick = function()
+			{
+				animate(box,{top: 500});
+			}
+			function animate(obj,json,fn)
+			{
+				clearInterval(obj.timer);
+				obj.timer = setInterval(function(){
+					var falg = true;
+					for(var attr in json)
+					{
+						var current = 0;
+						if(attr == "opacity")
+						{
+							current = Math.round(parseInt(getStyle(obj,attr)*100)) || 0;
+						}
+						else
+						{
+							current = parseInt(getStyle(obj,attr));
+						}
+						var step = (json[attr] - current) / 10;
+						step = step > 0 ? Math.ceil(step) : Math.floor(step);
+						if(attr == "opacity")
+						{
+							if("opacity" in obj.style)  //w3c
+							{
+								obj.style.opacity = (current + step) / 100;
+							}
+							else  //ie
+							{
+								obj.style.filter = "alpha(opacity ="+(current + step)*10+")";
+							}
+					    }
+					    else if(attr == "zIndex")
+					    {
+					    	obj.style.zIndex = json[attr];
+					    }
+					    else
+					    {
+					    	obj.style[attr] = current + step + "px";
+					    }
+					    if(current != json[attr])
+					    {
+					    	flag = false;
+					    }
+					}
+					if(falg)
+					{
+						clearInterval(obj.timer);
+						if(fn)
+						{
+							fn();
+						}
+					}
+				},30);
+				
+			}
+			function getStyle(obj,attr)
+			{
+				if(obj.currentStyle)  //ie
+				{
+					return obj.currentStyle[attr];  
+				}
+				else
+				{
+					return window.getComputedStyle(obj,null)[attr];
+				}
+			}
+		}
+	</script>
+  </head>
+  
+  <body>
+    <button id="btn1">btn1</button>
+    <button id="btn2">btn1</button>
+    <div id="box"></div>
+  </body>
+</html>
